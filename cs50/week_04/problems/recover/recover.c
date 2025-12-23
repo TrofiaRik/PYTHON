@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
     // While there's still data left to read from the memory card
     while (fread(data_buffer, 1, 512, card) == 512)
     {
-        //fread(data_buffer, 1, 512, card);
         if (data_buffer[0] == 0xff && data_buffer[1] == 0xd8 &&
             data_buffer[2] == 0xff && ((data_buffer[3] & 0xf0) == 0xe0))
         {       
